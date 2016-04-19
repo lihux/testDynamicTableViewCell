@@ -19,7 +19,6 @@
     for (NSLayoutConstraint *constraint in self.constraints) {
         if (constraint.firstItem == self && (constraint.firstAttribute == NSLayoutAttributeWidth || constraint.firstAttribute == NSLayoutAttributeHeight)) {
             constraint.constant = width;
-            NSLog(@"\n\n我勒个去：%@\n\n", constraint);
         }
     }
 }
@@ -31,7 +30,7 @@
 
 - (CGFloat)imageViewGap
 {
-    return [LHDynamicTableViewCell imageViewGap];
+    return 8;
 }
 
 - (CGFloat)imageViewWidth

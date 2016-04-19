@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class LHDynamicTableViewCellModel;
+
 @interface LHDynamicTableViewCell : UITableViewCell
 
-- (void)configCellWithContent:(NSString *)content;
-
-#pragma mark - convenience methods
-+ (CGFloat)imageViewGap;
+@property (nonatomic, strong) LHDynamicTableViewCellModel *cellModel;
 
 @end

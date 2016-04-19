@@ -36,10 +36,12 @@
     UILabel *label = [[UILabel alloc] init];
     label.font = font;
     label.preferredMaxLayoutWidth = width;
-    label.text = string;
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]};
+    label.attributedText = [[NSAttributedString alloc]initWithString:string attributes:attributes];
+//    label.text = string;
     label.numberOfLines = count;
     CGSize labelSize = [label intrinsicContentSize];
-    NSLog(@"label的尺寸是：%f, %f", labelSize.width , labelSize.height);
+//    NSLog(@"label的尺寸是：%f, %f", labelSize.width , labelSize.height);
     return labelSize;
 }
 

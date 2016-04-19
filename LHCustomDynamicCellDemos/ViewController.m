@@ -9,12 +9,15 @@
 #import "ViewController.h"
 
 #import "LHDynamicTableViewCell.h"
+#import "LHDynamicTableViewCellModel.h"
+
+static const NSInteger KDefaultDataCount = 100;
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) NSArray <NSString *> *data;
+@property (nonatomic, strong) NSArray <LHDynamicTableViewCellModel *> *data;
 
 @end
 
@@ -22,34 +25,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.data = @[@"iOS",
-                  @"iOS上不同app",
-                  @"iOS上不同app注册相同的scheme",
-                  @"iOS上不同app注册相同的scheme，打开时系统会挑选先注册的app",
-                  @"iOS上不同app注册相同的scheme，打开时系统会挑选先注册的app，可以认为是随机打开一个app。",
-                  @"iOS上不同app注册相同的scheme，打开时系统会挑选先注册的app，可以认为是随机打开一个app。 基于这点",
-                  @"iOS上不同app注册相同的scheme，打开时系统会挑选先注册的app，可以认为是随机打开一个app。 基于这点，每个app应该有自己独有的scheme.",
-                  @"iOS上不同app注册相同的scheme，打开时系统会挑选先注册的app，可以认为是随机打开一个app。 基于这点，每个app应该有自己独有的scheme，避免造成用户困惑。",
-                  @"iOS上不同app注册相同的scheme，打开时系统会挑选先注册的app，可以认为是随机打开一个app。 基于这点，每个app应该有自己独有的scheme，避免造成用户困惑。（注：ios可以在代码里拒绝打开，所以问题不大，但是还是会调用每一个相同scheme的代码）"];
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 500;
+    LHDynamicTableViewCellModel *cellModel = self.data[indexPath.row];
+    NSLog(@"\n\n我勒个去的cell高度是：%f\n\n", cellModel.cellHeight);
+    return cellModel.cellHeight;
 }
 
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LHDynamicTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"LHDynamicTableViewCell"];
-    [cell configCellWithContent:self.data[indexPath.row]];
+    cell.cellModel = self.data[indexPath.row];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.data.count;
+}
+
+#pragma mark - lazy load
+- (NSArray<LHDynamicTableViewCellModel *> *)data
+{
+    if (!_data) {
+        NSMutableArray *temp = [NSMutableArray array];
+        for (int i = 0; i < KDefaultDataCount; i ++) {
+            [temp addObject:[[LHDynamicTableViewCellModel alloc] init]];
+        }
+        _data = [NSArray arrayWithArray:temp];
+    }
+    return _data;
 }
 
 @end
