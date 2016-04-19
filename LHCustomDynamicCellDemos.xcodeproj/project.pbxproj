@@ -15,6 +15,9 @@
 		52545AA91CC5C95900244905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52545AA71CC5C95900244905 /* LaunchScreen.storyboard */; };
 		52545AB41CC5C95900244905 /* LHCustomDynamicCellDemosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52545AB31CC5C95900244905 /* LHCustomDynamicCellDemosTests.m */; };
 		52545ABF1CC5C95900244905 /* LHCustomDynamicCellDemosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52545ABE1CC5C95900244905 /* LHCustomDynamicCellDemosUITests.m */; };
+		52545ACE1CC5CA9B00244905 /* LHDynamicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52545ACD1CC5CA9B00244905 /* LHDynamicTableViewCell.m */; };
+		52545AD11CC5DE8500244905 /* LHLabelSizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52545AD01CC5DE8500244905 /* LHLabelSizeHelper.m */; };
+		52545AD61CC6035F00244905 /* LHImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52545AD51CC6035F00244905 /* LHImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		52545ABA1CC5C95900244905 /* LHCustomDynamicCellDemosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LHCustomDynamicCellDemosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52545ABE1CC5C95900244905 /* LHCustomDynamicCellDemosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHCustomDynamicCellDemosUITests.m; sourceTree = "<group>"; };
 		52545AC01CC5C95900244905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52545ACC1CC5CA9B00244905 /* LHDynamicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDynamicTableViewCell.h; sourceTree = "<group>"; };
+		52545ACD1CC5CA9B00244905 /* LHDynamicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHDynamicTableViewCell.m; sourceTree = "<group>"; };
+		52545ACF1CC5DE8500244905 /* LHLabelSizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLabelSizeHelper.h; sourceTree = "<group>"; };
+		52545AD01CC5DE8500244905 /* LHLabelSizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLabelSizeHelper.m; sourceTree = "<group>"; };
+		52545AD41CC6035F00244905 /* LHImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHImageView.h; sourceTree = "<group>"; };
+		52545AD51CC6035F00244905 /* LHImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,12 @@
 				52545A9D1CC5C95900244905 /* AppDelegate.m */,
 				52545A9F1CC5C95900244905 /* ViewController.h */,
 				52545AA01CC5C95900244905 /* ViewController.m */,
+				52545ACF1CC5DE8500244905 /* LHLabelSizeHelper.h */,
+				52545AD01CC5DE8500244905 /* LHLabelSizeHelper.m */,
+				52545AD41CC6035F00244905 /* LHImageView.h */,
+				52545AD51CC6035F00244905 /* LHImageView.m */,
+				52545ACC1CC5CA9B00244905 /* LHDynamicTableViewCell.h */,
+				52545ACD1CC5CA9B00244905 /* LHDynamicTableViewCell.m */,
 				52545AA21CC5C95900244905 /* Main.storyboard */,
 				52545AA51CC5C95900244905 /* Assets.xcassets */,
 				52545AA71CC5C95900244905 /* LaunchScreen.storyboard */,
@@ -273,9 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52545AD61CC6035F00244905 /* LHImageView.m in Sources */,
 				52545AA11CC5C95900244905 /* ViewController.m in Sources */,
 				52545A9E1CC5C95900244905 /* AppDelegate.m in Sources */,
+				52545AD11CC5DE8500244905 /* LHLabelSizeHelper.m in Sources */,
 				52545A9B1CC5C95900244905 /* main.m in Sources */,
+				52545ACE1CC5CA9B00244905 /* LHDynamicTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
